@@ -1,5 +1,6 @@
 package com.IsmailUsman_i180516_i180634;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,6 +12,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.io.PrintStream;
 
 public class signUp extends AppCompatActivity {
@@ -18,12 +26,15 @@ public class signUp extends AppCompatActivity {
     Button signUp, logIn;
     TextView email,password,confirm_password ;
     MyDBHelper DB ;
+    FirebaseAuth mAuth;
     TextView myText ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+        mAuth=FirebaseAuth.getInstance();
 
         logIn = findViewById(R.id.logIn);
         signUp = findViewById(R.id.signUp);
@@ -61,35 +72,28 @@ public class signUp extends AppCompatActivity {
 
                 else
                 {
-                    boolean check = DB.checkemail(e) ;
+                    // lets create a user now
+                    mAuth.createUserWithEmailAndPassword(e,p1)
+                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful())
+                            {
+                                Toast.makeText(signUp.this , "User Created Successfully ", Toast.LENGTH_SHORT).show();
+                            }
 
-                    if ( check == true)
-                    {
-                        boolean insert = DB.insertData(e,p1,p2);
-                        boolean ins = DB.insertProfileData("hello" , "mani" , "khan" , "male" , "hellow to the future" , "bye") ;
-
-                        if(insert==true)
-                        {
-                            Toast.makeText(signUp.this , "Sign Up Successful", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(signUp.this, createProfile.class);
-                            String str1 = DB.fetchingquerryagain() ;
-
-                            Log.d("CHECK_KAR_RAHA" , str1) ;
-                            startActivity(intent);
                         }
-
-                        else
-                        {
-                            Toast.makeText(signUp.this , "Sign Up Failed", Toast.LENGTH_SHORT).show();
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(signUp.this , "Failed To Create User ", Toast.LENGTH_SHORT).show();
                         }
-                    }
+                    });
 
-                    else
-                    {
-                        Toast.makeText(signUp.this , "User Already Exists ! Please Try Another Email", Toast.LENGTH_SHORT).show();
-                    }
 
                 }
+
 
             }
         });
