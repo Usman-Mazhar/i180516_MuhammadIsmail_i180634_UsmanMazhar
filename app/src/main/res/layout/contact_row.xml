@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:background="#1F1F1F">
+
+    <RelativeLayout
+        android:layout_marginTop="15dp"
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_picture"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/chat"/>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@+id/profile_picture"
+            android:paddingTop="5dp"
+            android:text="Usman"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/last_mssg"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/name"
+            android:layout_toRightOf="@+id/profile_picture"
+            android:gravity="start"
+            android:text="hahah, Usman Sab"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@+id/name"
+            android:paddingTop="5dp"
+            android:text="Usman"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/name"
+            android:layout_toRightOf="@+id/last_mssg"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+    <View
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/rl"
+        android:layout_width="322dp"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+</RelativeLayout>

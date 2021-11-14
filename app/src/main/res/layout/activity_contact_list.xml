@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ContactList">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#1C1B1B"
+        android:orientation="vertical"
+        android:weightSum="1">
+        <LinearLayout
+            android:layout_weight="0.14"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1"
+            android:layout_height="0dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageButton
+                    android:id="@+id/newcontact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/person_add_24" />
+                <TextView
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:text="New Contact"
+                    android:textColor="@color/white"/>
+                <ImageButton
+                    android:layout_alignParentBottom="true"
+                    android:id="@+id/newgroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/group_add_24"/>
+                <TextView
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="68dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:text="New Group"
+                    android:textColor="@color/white"/>
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="0.75"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/recycler_view"
+                tools:listitem="@layout/item_contact"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="0.11"
+            android:weightSum="1"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#1F1F1F">
+            <RelativeLayout
+                android:layout_weight="0.25"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/call4"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerInside"
+                    android:background="?android:selectableItemBackground"
+                    android:src="@drawable/phone4" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_weight="0.25"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/pic4"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:background="?android:selectableItemBackground"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/camera_24" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_weight="0.25"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/message4"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:background="?android:selectableItemBackground"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/message_24" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_weight="0.25"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/contact4"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:background="?android:selectableItemBackground"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/group_24" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

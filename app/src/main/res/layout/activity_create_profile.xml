@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1C1C1B"
+    tools:context=".createProfile">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/below_line"
+        android:elevation="10sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="serif"
+            android:paddingLeft="20sp"
+            android:text="Create Profile"
+            android:textColor="#FFC107"
+            android:textSize="25sp"
+            android:textStyle="normal" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/photo"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_below="@+id/header"
+        android:gravity="center">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profilePhoto"
+            android:layout_width="90sp"
+            android:layout_height="90sp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/round_person"
+            android:src="@drawable/user"
+            tools:ignore="MissingClass" />
+
+        <ImageView
+            android:id="@+id/select_image"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60sp"
+            android:background="@drawable/round_camera"
+            android:padding="10sp"
+            android:src="@drawable/ic_outline_camera_alt_24" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/photo">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10sp"
+            android:fontFamily="serif"
+            android:text="Name"
+            android:textColor="#FFC107"
+            android:textSize="22dp"
+            android:textStyle="normal" />
+
+        <LinearLayout
+            android:id="@+id/NameField"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/name"
+            android:layout_marginHorizontal="30dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+
+            >
+
+            <EditText
+                android:id="@+id/FirstName"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_message"
+                android:hint="First Name"
+                android:paddingLeft="20dp"
+                android:textColor="#2196F3"
+                android:textColorHint="#7D7C7C" />
+
+            <EditText
+                android:id="@+id/LastName"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_message"
+                android:hint="Last Name"
+                android:paddingLeft="20dp"
+                android:textColor="#2196F3"
+                android:textColorHint="#7D7C7C" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/dob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/NameField"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="5sp"
+            android:fontFamily="serif"
+            android:text="Date of Birth"
+            android:textColor="#FFC107"
+            android:textSize="22dp"
+            android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/dobField"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/dob"
+            android:layout_marginHorizontal="30dp"
+            android:background="@drawable/round_message"
+            android:hint="DD/MM/YY"
+            android:inputType="date"
+            android:paddingLeft="20dp"
+            android:textColor="#2196F3"
+            android:textColorHint="#7D7C7C" />
+
+        <TextView
+            android:id="@+id/gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dobField"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="5sp"
+            android:fontFamily="serif"
+            android:text="Gender"
+            android:textColor="#FFC107"
+            android:textSize="22dp"
+            android:textStyle="normal" />
+
+        <LinearLayout
+            android:id="@+id/genderField"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/gender"
+            android:layout_marginLeft="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_button"
+                android:padding="15dp"
+                android:text="Male"
+                android:textColor="#33cc33"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/round_button"
+                android:padding="15dp"
+                android:text="Female"
+                android:textColor="#33cc33"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/notInterested"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/round_button"
+                android:padding="15dp"
+                android:text="Prefer Not to Say"
+                android:textColor="#33cc33"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/phno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/genderField"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="5sp"
+            android:fontFamily="serif"
+            android:text="Phone Number"
+            android:textColor="#FFC107"
+            android:textSize="22dp"
+            android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/phnoField"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/phno"
+            android:layout_marginHorizontal="30dp"
+            android:background="@drawable/round_message"
+            android:hint="03001231231"
+            android:paddingLeft="20dp"
+            android:textColor="#2196F3"
+            android:textColorHint="#7D7C7C" />
+
+        <TextView
+            android:id="@+id/textViewBio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/phnoField"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="5sp"
+            android:fontFamily="serif"
+            android:text="Bio"
+            android:textColor="#FFC107"
+            android:textSize="22dp"
+            android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/bioField"
+            android:layout_width="match_parent"
+            android:layout_height="90sp"
+            android:layout_below="@+id/textViewBio"
+            android:layout_marginHorizontal="30dp"
+            android:background="@drawable/round_message"
+            android:hint="Tell more about yourself"
+            android:paddingLeft="20dp"
+            android:textColor="#2196F3"
+            android:textColorHint="#7D7C7C" />
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bioField"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#193155"
+            android:fontFamily="serif"
+            android:text="Save"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
